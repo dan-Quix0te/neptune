@@ -1,0 +1,9 @@
+
+BASIC_AUTH_FORCE = False
+BASIC_AUTH_USERNAME = 'siteone'
+BASIC_AUTH_PASSWORD = 'pluto123'
+
+DEBUG = True
+PORT = 40000
+HOST = "0.0.0.0"
+
