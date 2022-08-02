@@ -3,6 +3,7 @@ from flask import render_template
 from app.main import main
 from app.main.forms import ingestMediaForm
 
+from app.ingest import *
 
 @main.route('/')
 def index():
@@ -11,6 +12,9 @@ def index():
 @main.route('/ingest', methods=['GET','POST'])
 def ingest():
     form = ingestMediaForm()
+    if form.validate_on_submit():
+        result = ingestMedia("media/test.mp4")
+        return render_template('result.html', title='result', result=result)
     return render_template('ingest.html', title='ingest', form=form)
 
 
