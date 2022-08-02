@@ -10,7 +10,7 @@ basic_auth = BasicAuth(app)
 
 
 
-from app import views
+from app import routes
 
 
 
