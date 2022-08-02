@@ -1,31 +1,36 @@
+<html>
+ <head>
 
-    {% if title %}
-    <title>{{ title }} - Neptune Admin Page</title>
-    {% else %}
-    <title>Neptune Admin Page</title>
-    {% endif %}
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
 
-<div>
-    <h1 class="neptune-title" id="mobile-title">Neptune Admin Page<h1/>
-</div> 
-
-<!-- Side navigation -->
-    <div class="sidenav">
-     <a href="/">Home</a>
-     <a href="/ingest">Ingest</a>
-<!--     <a href="/schedule">Schedule</a>
-     <a href="/mixer">Mixer</a>
-     <a href="/record">Record</a>
-     <a href="/archive">Archive</a>
-     <a href="/delivery">Delivery</a> -->
-    </div>
-
-
-
+  {% if title %}
+  <title>{{ title }} - Neptune</title>
+  {% else %}
+  <title>Neptune</title>
+  {% endif %}
  </head>
   <body>
-      <div class="main">
-       {% block content %}{% endblock %}
-      </div> 
+ 
+  <div class="navbar">
+    <ul>
+       <li><a href="{{ url_for('main.index') }}">Home</a></li>
+        <li><a href="{{ url_for('main.ingest') }}">Ingest</a></li>
+    <ul>
+  </div>
+  <hr>
+ {% with messages = get_flashed_messages() %}
+ {% if messages %}
+ <ul>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+ </ul>
+ {% endif %}
+ {% endwith %} 
+ {% block content %}{% endblock %}
+   <div class="footer">
+    <a href="{{ url_for('main.changeLog') }}">{{ version }}</a>
+   </div>
   </body>
 </html>
+

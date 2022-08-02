@@ -13,10 +13,14 @@ def index():
 def ingest():
     form = ingestMediaForm()
     if form.validate_on_submit():
-        result = ingestMedia("media/test.mp4")
+        result = ingestMedia('media/test.mp4')
         return render_template('result.html', title='result', result=result)
     return render_template('ingest.html', title='ingest', form=form)
 
+@main.route('/changelog')
+def changeLog():
+    with open('CHANGELOG.md','r') as f:
+        return render_template('changelog.html', text=f.read(), title='Changelog')
 
 
 #@app.route('/schedule')
