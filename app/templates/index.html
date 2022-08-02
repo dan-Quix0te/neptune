@@ -1,16 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="container">
-<hr>
-      <p><input class="btn color-1 material-design" data-color="#2f5398" type="button" name="ingest" value="ingest" onclick="self.location.href='/ingest'" onclick>
-<!--
-      <p><input class="btn color-1 material-design" data-color="#004740" type="button" name="schedule" value="schedule" onclick="self.location.href='/schedule'" onclick>
-      <p><input class="btn color-1 material-design" data-color="#f34711" type="button" name="mixer" value="mixer" onclick="self.location.href='/mixer'" onclick>
-      <p><input class="btn color-1 material-design" data-color="#d2181c" type="button" name="record" value="record" onclick="self.location.href='/record'" onclick>
-      <p><input class="btn color-1 material-design" data-color="#455a64" type="button" name="archive" value="archive" onclick="self.location.href='/archive'" onclick>
-        <p><input class="btn color-1 material-design" data-color="#455a64" type="button" name="delivery" value="delivery" onclick="self.location.href='/delivery'" onclick>
--->
-</section>
+
+<h1> Neptune </h1>
+<h3> 24/7 Streaming </h3>
+
+<p><a href="{{ url_for('main.ingest') }}">Ingest</a></p>
 
 {% endblock %}
+
 
