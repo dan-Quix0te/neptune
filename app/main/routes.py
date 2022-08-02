@@ -1,18 +1,17 @@
-from app.main import main
 from flask import render_template
-import os
-import subprocess
 
-
+from app.main import main
+from app.main.forms import ingestMediaForm
 
 
 @main.route('/')
 def index():
     return render_template('index.html', title='Home')
 
-@main.route('/ingest')
+@main.route('/ingest', methods=['GET','POST'])
 def ingest():
-    return render_template('ingest.html', title='ingest')
+    form = ingestMediaForm()
+    return render_template('ingest.html', title='ingest', form=form)
 
 
 
