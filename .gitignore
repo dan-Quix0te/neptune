@@ -1,5 +1,8 @@
 *.log
+*.db
+
+config.py
 
 venv/
 __pycache__/
-
+media/*

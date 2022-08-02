@@ -70,10 +70,17 @@ to OSP
 
 python3 -m venv venv
 
-venv/bin/pip3 install -r requirements.txt
+venv/bin/pip install -r requirements.txt
+
+cp config-example.py config.py (Change secret!)
 
 ./run.py 
 
-<ip-address>:40000
+<ip-address>:5000
 
 </code>
+
+
+## Tests
+
+ffmpeg -f lavfi -i smptebars -t 30 smpte.mp4
