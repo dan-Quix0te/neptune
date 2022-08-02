@@ -1,9 +1,35 @@
+import os
 
-BASIC_AUTH_FORCE = False
-BASIC_AUTH_USERNAME = 'siteone'
-BASIC_AUTH_PASSWORD = 'pluto123'
+basedir = os.path.abspath(os.path.dirname(__file__))
 
-DEBUG = True
-PORT = 40000
-HOST = "0.0.0.0"
+class Config(object):
+	"""
+	Common configurations
+	"""
 
+	# Put any configurations here that are common across all environments
+
+	HOST = '0.0.0.0'
+	SECRET_KEY = 'Subside-Octopus0-Designing'
+
+
+class DevelopmentConfig(Config):
+    """
+    Development configurations
+    """
+    DEBUG = True
+
+
+class ProductionConfig(Config):
+    """
+    Production configurations
+    """
+
+    DEBUG = False
+
+
+
+app_config = {
+	'development': DevelopmentConfig,
+	'production': ProductionConfig
+}
