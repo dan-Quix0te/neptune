@@ -77,3 +77,8 @@ venv/bin/pip3 install -r requirements.txt
 <ip-address>:40000
 
 </code>
+
+
+## Tests
+
+ffmpeg -f lavfi -i smptebars -t 30 smpte.mp4
